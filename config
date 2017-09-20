@@ -167,3 +167,6 @@ bindsym XF86MonBrightnessDown exec light -U 5
 # Move mouse cursor out of the way
 bindsym $mod+m exec xdotool mousemove 1400 800
 
+# Lock workstation
+bindsym $mod+x exec i3lock
+
