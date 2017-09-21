@@ -170,3 +170,7 @@ bindsym $mod+m exec xdotool mousemove 1400 800
 # Lock workstation
 bindsym $mod+x exec i3lock
 
+# Bind volume keys
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%
+
