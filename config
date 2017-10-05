@@ -161,16 +161,17 @@ bar {
 
 # Use light program to adjust monitor brightness
 # https://github.com/haikarainen/light
-bindsym XF86MonBrightnessUp exec light -A 5
-bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
 # Move mouse cursor out of the way
-bindsym $mod+m exec xdotool mousemove 1400 800
+bindsym $mod+m exec --no-startup-id xdotool mousemove 1400 800
 
 # Lock workstation
-bindsym $mod+x exec i3lock
+bindsym $mod+x exec --no-startup-id i3lock
 
 # Bind volume keys
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
