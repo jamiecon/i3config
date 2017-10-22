@@ -35,6 +35,9 @@ font pango:monospace 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Smart setting hides the window borders if they are fullscreen
+hide_edge_borders smart
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -180,3 +183,9 @@ bar {
         status_command i3status -c ~/.config/i3/i3status.conf 
 }
 
+# Assign common applications to specific workspaces 
+assign [class="^Firefox$"] → 1
+assign [class="^Gnome-terminal$"] → 2
+assign [class="^keepassxc$"] → 3
+assign [class="^Code$"] → 4
+assign [class="^qBittorrent$"] → 5
