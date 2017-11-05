@@ -183,6 +183,9 @@ bar {
         status_command i3status -c ~/.config/i3/i3status.conf 
 }
 
+# Start network manager
+exec --no-startup-id nm-applet
+
 # Assign common applications to specific workspaces 
 assign [class="^Firefox$"] → 1
 assign [class="^Gnome-terminal$"] → 2
