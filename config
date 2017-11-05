@@ -12,7 +12,24 @@
 set $mod Mod4
 
 # Autolock
-exec --no-startup-id xautolock -time 2 -locker i3lock 
+exec --no-startup-id xautolock -time 2 -locker i3lock
+
+# Shutdown menu
+# https://wiki.archlinux.org/index.php/i3#Shutdown.2C_reboot.2C_lock_screen
+set $Locker i3lock && sleep 1
+set $mode_system System (l) lock, (e) logout, (s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    #bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    #bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    #bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"  
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+x mode "$mode_system" 
 
 # Invert touchpad scroll behaviour and enable palm detection
 exec --no-startup-id synclient VertScrollDelta=-116 PalmDetect=1 
@@ -168,9 +185,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
 # Move mouse cursor out of the way
 bindsym $mod+m exec --no-startup-id xdotool mousemove 1400 800
-
-# Lock workstation
-bindsym $mod+x exec --no-startup-id i3lock
 
 # Bind volume keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2%
