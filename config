@@ -32,7 +32,7 @@ mode "$mode_system" {
 bindsym $mod+x mode "$mode_system" 
 
 # Invert touchpad scroll behaviour and enable palm detection
-exec --no-startup-id synclient VertScrollDelta=-116 PalmDetect=1 
+#exec --no-startup-id synclient VertScrollDelta=-116 PalmDetect=1 
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -150,7 +150,7 @@ bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Shift+e exit
+#bindsym $mod+Shift+e exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -180,11 +180,11 @@ bindsym $mod+r mode "resize"
 
 # Use 'light' to adjust monitor brightness
 # https://github.com/haikarainen/light
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+#bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+#bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
 
 # Move mouse cursor out of the way
-bindsym $mod+m exec --no-startup-id xdotool mousemove 1400 800
+#bindsym $mod+m exec --no-startup-id xdotool mousemove 1400 800
 
 # Bind volume keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2%
@@ -206,3 +206,4 @@ assign [class="^Gnome-terminal$"] → 2
 assign [class="^keepassxc$"] → 3
 assign [class="^Code$"] → 4
 assign [class="^qBittorrent$"] → 5
+assign [class="^The Adventures of Samantha the Snail$"] → 5
