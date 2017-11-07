@@ -179,9 +179,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Use 'light' to adjust monitor brightness
-# https://github.com/haikarainen/light
-#bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
-#bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
 # Move mouse cursor out of the way
 #bindsym $mod+m exec --no-startup-id xdotool mousemove 1400 800
