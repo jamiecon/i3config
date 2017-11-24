@@ -14,7 +14,7 @@ set $mod Mod4
 # Autolock with Bing daily image
 set $Locker i3lock --image ~/bing-daily.png && sleep 1
 exec --no-startup-id ~/code/bingimg/main.py
-exec --no-startup-id xautolock -time 3 -locker '$Locker'
+exec --no-startup-id xautolock -time 5 -locker '$Locker' -corners 0-00
 
 # Shutdown menu
 # https://wiki.archlinux.org/index.php/i3#Shutdown.2C_reboot.2C_lock_screen
@@ -204,4 +204,3 @@ assign [class="^Gnome-terminal$"] → 2
 assign [class="^keepassxc$"] → 3
 assign [class="^Code$"] → 4
 assign [class="^qBittorrent$"] → 5
-assign [class="^The Adventures of Samantha the Snail$"] → 5
